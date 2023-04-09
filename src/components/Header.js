@@ -62,7 +62,7 @@ const Header = () => {
             <Link href={"/signup"}>Signin</Link>
           </div>
         )}
-        {session && status === "authenticated" && (
+        {/* {session && status === "authenticated" && ( */}
           <div className="flex items-center">
             <div
               className=" bg-white cursor-pointer  w-9 h-9 flex justify-center items-center rounded-full  mr-4  "
@@ -134,7 +134,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        )}
+        {/* )} */}
       </div>
       {/* <nav className="relative bg-white shadow 800">
         <div className="container px-6 py-4 mx-auto">
