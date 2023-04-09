@@ -1,0 +1,64 @@
+ // const onSubmit = async () => {
+  //   const data = new FormData();
+  //   data.append("file", image);
+  //   data.append("upload_preset", "postupload");
+  //   try {
+  //     const uploadRes = await axios.post(
+  //       "CLOUDINARY_URL=cloudinary://717593366736996:JZjjCeTDmbulP-GwG9S2zpCdWFg@ddrjnijut",
+  //       image
+  //     );
+
+  //     const { url } = uploadRes.data;
+  //     const newPost = {
+  //       userId,
+  //       img: url,
+  //     };
+  //     console.log(url);
+  //     await axios.post("http://localhost:3000/api/products", newPost);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+
+
+    //
+
+
+    
+   const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    TransformFileData(file);
+  };
+  const TransformFileData = (file) => {
+    const reader = new FileReader();
+
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+    } else {
+      setImage("");
+    }
+  };
+
+  const onSubmit = async () => {
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/api/post/",
+        {
+          userId,
+          image,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(res); 
+    } catch (e) {
+      console.log();
+    }
+  };
