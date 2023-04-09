@@ -107,11 +107,11 @@ const UserProfileCard = () => {
         </div>
         <div className="flex flex-col items-center -mt-20">
           <img
-            src={session?.user.image}
+            src={session?.user.image || "/image/profile.webp"}
             className="w-40 border-4 border-white rounded-full"
           />
           <div className="flex items-center space-x-2 mt-2">
-            <p className="text-2xl"> {session?.user.name}</p>
+            <p className="text-2xl"> {session?.user.name || <div>Md Yasin</div>}</p>
             <span className="bg-blue-500 rounded-full p-1" title="Verified">
               <svg
                 className="text-gray-100 h-2.5 w-2.5"
@@ -128,7 +128,7 @@ const UserProfileCard = () => {
               </svg>
             </span>
           </div>
-          <p className="text-gray-700">{session?.user.email}</p>
+          <p className="text-gray-700">{session?.user.email || <div>Your Email</div>}</p>
           <p className="text-sm text-gray-500">New York, USA</p>
           <div className="flex justify-center items-center gap-2 my-3">
             <div className="font-semibold text-center mx-4">

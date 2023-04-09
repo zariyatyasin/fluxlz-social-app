@@ -55,13 +55,14 @@ const Header = () => {
           >
             Trending
           </Link>
-        </div>
-
-        {!session && status === "unauthenticated" && (
+          {!session && status === "unauthenticated" && (
           <div className=" bg-white  w-9 h-9 flex justify-center items-center rounded-full  mr-8  ">
             <Link href={"/signup"}>Signin</Link>
           </div>
         )}
+        </div>
+
+      
         {/* {session && status === "authenticated" && ( */}
           <div className="flex items-center">
             <div
@@ -87,7 +88,7 @@ const Header = () => {
                 <span className="sr-only">Open user menu</span>
                 <img
                   className="w-8 h-8 rounded-full"
-                  src={session?.user?.image}
+                  src={session?.user?.image ||"/image/profile.webp"}
                   alt="user photo"
                 />
               </button>

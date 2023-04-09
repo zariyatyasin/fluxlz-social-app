@@ -7,23 +7,23 @@ import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
-export async function getServerSideProps({ params, req }) {
-  const session = await getSession({ req });
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+// export async function getServerSideProps({ params, req }) {
+//   const session = await getSession({ req });
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/login",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  const res = await axios.get(`http://localhost:3000/api/profile/yasin`);
+//   const res = await axios.get(`http://localhost:3000/api/profile/yasin`);
 
-  return {
-    props: { currentUserData: res.data, session }, // will be passed to the page component as props
-  };
-}
+//   return {
+//     props: { currentUserData: res.data, session }, // will be passed to the page component as props
+//   };
+// }
 
 const user = ({ currentUserData }) => {
   const router = useRouter();
