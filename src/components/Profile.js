@@ -22,11 +22,11 @@ const Profile = () => {
               {session?.user?.email}
             </div>
           </div>
-          {!session ? (
+          {/* {!session ? (
             <div className="   text-white  mb-3 rounded p-2  flex justify-center items-center   bg-[#71E4D5]">
               <Link href={"/signup"}>Signin</Link>
             </div>
-          ) : (
+          ) : ( */}
             <div className="flex justify-center items-center gap-2 my-3">
               <div className="font-semibold text-center mx-4">
                 <p className="text-black">102</p>
@@ -41,7 +41,7 @@ const Profile = () => {
                 <span className="text-gray-400">Folowing</span>
               </div>
             </div>
-          )}
+          {/* )} */}
         </div>
       </div>
     </div>
